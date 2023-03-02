@@ -1,0 +1,10 @@
+class Members(models.Model):
+    name = models.CharField(max_length=30, verbose_name = "Имя")
+    age = models.IntegerField(verbose_name = "Возраст")
+    photo = models.ImageField(upload_to="photos", height_field=100, width_field=100, max_length=100, verbose_name = "Фото")
+    email = models.EmailField(max_length=300, verbose_name = "Почта")
+
+class News(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField
+    image = models.ImageField(upload_to="image/%Y/%m/%d")
